@@ -1,3 +1,5 @@
+import {DestroyRef} from '@angular/core';
+
 const isFunction = (fn: any) => typeof fn === 'function';
 export type Nullable<T> = T | null | undefined;
 
@@ -30,7 +32,11 @@ export class SubSink {
    *   }
    * ```
    */
-  constructor() {}
+  constructor(private destroyRef?: DestroyRef) {
+    if (this.destroyRef) {
+      this.destroyRef.onDestroy(() => this.unsubscribe());
+    }
+  }
 
   /**
    * Add subscriptions to the tracked subscriptions

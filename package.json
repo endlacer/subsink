@@ -32,6 +32,14 @@
   "repository": {
     "url": "https://github.com/wardbell/subsink"
   },
+  "peerDependencies": {
+    "@angular/core": ">=16.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@angular/core": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@types/jest": "^21.1.4",
     "jest": "^21.2.1",
